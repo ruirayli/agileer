@@ -238,3 +238,9 @@
       }
 
     }
+
+    .project-img-circle {
+      -webkit-border-radius: 3000px;
+      -moz-border-radius: 300px;
+      border-radius: 300px;
+    }
