@@ -57,7 +57,7 @@
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <li class="active"><a href="<?php echo BASE_PATH;?>">主页</a></li>
-                <li><a href="<?php echo BASE_PATH;?>/blog">博客</a></li>
+                <li><a href="<?php echo BASE_PATH;?>blog">博客</a></li>
                 <li><a href="#about">项目</a></li>
                 <li><a href="#about">生活</a></li>
                 <li><a href="#contact">联系我</a></li>
