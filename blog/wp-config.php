@@ -13,6 +13,13 @@
  *
  * @package WordPress
  */
+define('ISDEV', true);
+
+if(ISDEV){
+ 	define('BASE_PATH', 'http://localhost/');
+}else{
+	define('BASE_PATH', 'http://www.agileer.com/');
+}
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -69,7 +76,7 @@ $table_prefix  = 'wp_';
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-define('WPLANG', '');
+define('WPLANG', 'zh_CN');
 
 /**
  * For developers: WordPress debugging mode.

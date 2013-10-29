@@ -33,12 +33,12 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<?php wp_head(); ?>
+<?php if(!defined("HOMEPAGE")) {wp_head();} ?>
 </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="hfeed site" style="margin-top:78px;">
-	<!-- NAVBAR
+<body <?php if(!defined("HOMEPAGE")) {body_class();} ?>>
+<div id="page123" class="<?PHP if(!defined("HOMEPAGE")) {echo "hfeed site 123";} ?>" style="<?php if(!defined("HOMEPAGE")) {echo "margin-top:78px;";} ?>">
+  <!-- NAVBAR
     ================================================== -->
     <div class="navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
@@ -56,8 +56,8 @@
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li class="active"><a href="http://localhost:99">主页</a></li>
-                <li><a href="http://localhost:99/blog">博客</a></li>
+                <li class="active"><a href="<?php echo BASE_PATH;?>">主页</a></li>
+                <li><a href="<?php echo BASE_PATH;?>/blog">博客</a></li>
                 <li><a href="#about">项目</a></li>
                 <li><a href="#about">生活</a></li>
                 <li><a href="#contact">联系我</a></li>
@@ -82,4 +82,4 @@
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
 
-	<div id="main" class="wrapper">
+  <div id="main" class="wrapper">
