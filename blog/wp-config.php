@@ -18,7 +18,7 @@ define('ISDEV', false);
 if(ISDEV){
  	define('BASE_PATH', 'http://localhost/');
 }else{
-	define('BASE_PATH', 'http://www.agileer.com/agileer/');
+	define('BASE_PATH', 'http://www.agileer.com/');
 }
 
 // ** MySQL settings - You can get this info from your web host ** //
