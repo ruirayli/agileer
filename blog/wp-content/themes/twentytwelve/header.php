@@ -22,6 +22,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
+<link rel="shortcut icon" href="/favicon.ico" >
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
@@ -58,8 +59,6 @@
               <ul class="nav">
                 <li class="active"><a href="<?php echo BASE_PATH;?>">主页</a></li>
                 <li><a href="<?php echo BASE_PATH;?>blog">博客</a></li>
-                <li><a href="#about">项目</a></li>
-                <li><a href="#about">生活</a></li>
                 <li><a href="#contact">联系我</a></li>
                 <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
                 <li class="dropdown">

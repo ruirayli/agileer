@@ -122,15 +122,13 @@ get_header(); ?>
 
       <!-- /END THE FEATURETTES -->
 
-
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">回到顶部</a></p>
         <p>Copyright&copy;2012-2013 Ray Inc. All Rights Reserved. 瑞家园 版权所有. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
-    </div><!-- /.container -->
-  </div>
+    </div><!-- /.main -->
 </div>
 
 
