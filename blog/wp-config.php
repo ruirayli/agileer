@@ -13,7 +13,7 @@
  *
  * @package WordPress
  */
-define('ISDEV', true);
+define('ISDEV', false);
 
 if(ISDEV){
  	define('BASE_PATH', 'http://localhost/');
