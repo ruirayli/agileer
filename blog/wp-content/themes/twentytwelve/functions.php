@@ -144,9 +144,10 @@ function twentytwelve_scripts_styles() {
 	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
 	wp_enqueue_script( 'twentytwelve-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
 
-	$font_url = twentytwelve_get_font_url();
-	if ( ! empty( $font_url ) )
-		wp_enqueue_style( 'twentytwelve-fonts', esc_url_raw( $font_url ), array(), null );
+	// 雅黑就好啦
+	// $font_url = twentytwelve_get_font_url();
+	// if ( ! empty( $font_url ) )
+	// 	wp_enqueue_style( 'twentytwelve-fonts', esc_url_raw( $font_url ), array(), null );
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
@@ -169,20 +170,20 @@ add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
  * @param string $mce_css CSS path to load in TinyMCE.
  * @return string Filtered CSS path.
  */
-function twentytwelve_mce_css( $mce_css ) {
-	$font_url = twentytwelve_get_font_url();
+// function twentytwelve_mce_css( $mce_css ) {
+// 	$font_url = twentytwelve_get_font_url();
 
-	if ( empty( $font_url ) )
-		return $mce_css;
+// 	if ( empty( $font_url ) )
+// 		return $mce_css;
 
-	if ( ! empty( $mce_css ) )
-		$mce_css .= ',';
+// 	if ( ! empty( $mce_css ) )
+// 		$mce_css .= ',';
 
-	$mce_css .= esc_url_raw( str_replace( ',', '%2C', $font_url ) );
+// 	$mce_css .= esc_url_raw( str_replace( ',', '%2C', $font_url ) );
 
-	return $mce_css;
-}
-add_filter( 'mce_css', 'twentytwelve_mce_css' );
+// 	return $mce_css;
+// }
+// add_filter( 'mce_css', 'twentytwelve_mce_css' );
 
 /**
  * Filter the page title.
