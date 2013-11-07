@@ -12,6 +12,13 @@
  *
  * @package WordPress
  */
+define('ISDEV', true);
+
+if(ISDEV){
+    define('BASE_PATH', 'http://localhost/');
+}else{
+    define('BASE_PATH', 'http://www.agileer.com/');
+}
 
 // ** MySQL 设置 - 具体信息来自您正在使用的主机 ** //
 /** WordPress数据库的名称 */
