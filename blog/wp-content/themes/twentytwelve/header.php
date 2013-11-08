@@ -37,8 +37,28 @@
 <?php if(!defined("HOMEPAGE")) {wp_head();} ?>
 </head>
 
+<?php
+  if(ISDEV){
+    $contact_url = BASE_PATH . "blog/%E8%81%94%E7%B3%BB%E6%88%91/";
+  }else{
+    $contact_url = BASE_PATH . "blog/contact/";
+  }
+  $menu_map = array('homepage' => array('url' => BASE_PATH, 'class' => set_menu_active(BASE_PATH)),
+                    'blog' => array('url' => BASE_PATH . "blog/", 'class' => set_menu_active(BASE_PATH . "blog/")),
+                    'contact' => array('url' => $contact_url, 'class' => set_menu_active($contact_url)));
+
+  function set_menu_active($url){
+    if($url == current_URL()){
+      return "active";
+    }else{
+      return "";
+    }
+  }
+  
+?>
+
 <body <?php if(!defined("HOMEPAGE")) {body_class();} ?>>
-<div id="page123" class="<?PHP if(!defined("HOMEPAGE")) {echo "hfeed site 123";} ?>" style="<?php if(!defined("HOMEPAGE")) {echo "margin-top:78px;";} ?>">
+<div id="page" class="<?PHP if(!defined("HOMEPAGE")) {echo "hfeed site 123";} ?>" style="<?php if(!defined("HOMEPAGE")) {echo "margin-top:78px;";} ?>">
   <!-- NAVBAR
     ================================================== -->
     <div class="navbar-wrapper">
@@ -53,13 +73,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="<?php echo BASE_PATH;?>">Agiler</a>
+            <a class="brand" href="<?php echo $menu_map['homepage']['url'];?>">Agiler</a>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li class="active"><a href="<?php echo BASE_PATH;?>">主页</a></li>
-                <li><a href="<?php echo BASE_PATH;?>blog">博客</a></li>
-                <li><a href="#contact">联系我</a></li>
+                <li class="<?php echo $menu_map['homepage']['class'];?>"><a href="<?php echo $menu_map['homepage']['url'];?>">主页</a></li>
+                <li class="<?php echo $menu_map['blog']['class'];?>"><a href="<?php echo $menu_map['blog']['url'];?>">博客</a></li>
+                <li class="<?php echo $menu_map['contact']['class'];?>"><a href="<?php echo $menu_map['contact']['url'];?>">联系我</a></li>
                 <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">百宝箱 <b class="caret"></b></a>
