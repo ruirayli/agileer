@@ -58,7 +58,7 @@
 ?>
 
 <body <?php if(!defined("HOMEPAGE")) {body_class();} ?>>
-<div id="page" class="<?PHP if(!defined("HOMEPAGE")) {echo "hfeed site 123";} ?>" style="<?php if(!defined("HOMEPAGE")) {echo "margin-top:78px;";} ?>">
+<div id="page" class="<?PHP if(!defined("HOMEPAGE")) {echo "hfeed site";} ?>" style="<?php if(!defined("HOMEPAGE")) {echo "margin-top:78px;";} ?>">
   <!-- NAVBAR
     ================================================== -->
     <div class="navbar-wrapper">
@@ -73,9 +73,9 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="<?php echo $menu_map['homepage']['url'];?>">Agiler</a>
+            <a class="brand img-circle" href="<?php echo $menu_map['homepage']['url'];?>"><span style="margin-left:34px;">Agiler</span></a>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-            <div class="nav-collapse collapse">
+            <div class="nav-collapse collapse" style="margin-left:150px;">
               <ul class="nav">
                 <li class="<?php echo $menu_map['homepage']['class'];?>"><a href="<?php echo $menu_map['homepage']['url'];?>">主页</a></li>
                 <li class="<?php echo $menu_map['blog']['class'];?>"><a href="<?php echo $menu_map['blog']['url'];?>">博客</a></li>
