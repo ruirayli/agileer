@@ -28,7 +28,7 @@ get_header(); ?>
 				<pre style="margin-bottom:10px;">
   					<div style="text-align:center;">欢迎通过以下方式进行交流！</div>
 				</pre>
-				<div>
+				<div style="margin-left:75px;">
 					<ul class="thumbnails">
 					  <li class="span4">
 					    <div class="thumbnail">
@@ -59,7 +59,7 @@ get_header(); ?>
 					</ul>
 				</div>
 
-				<div style="margin-left:100px;">
+				<div style="margin-left:160px;">
 					<ul class="thumbnails">
 					  
 					  <li class="span4">
