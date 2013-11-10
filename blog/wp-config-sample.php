@@ -102,3 +102,4 @@ if ( !defined('ABSPATH') )
 
 /** 设置WordPress变量和包含文件。 */
 require_once(ABSPATH . 'wp-settings.php');
+require_once(ABSPATH . 'bootstrap.php');
