@@ -75,7 +75,7 @@
             </button>
             <a class="brand img-circle" href="<?php echo $menu_map['homepage']['url'];?>"><span style="margin-left:34px;">Agiler</span></a>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-            <div class="nav-collapse collapse" style="margin-left:100px;">
+            <div class="nav-collapse collapse" style="margin-left:99px;">
               <ul class="nav">
                 <li class="<?php echo $menu_map['homepage']['class'];?>"><a href="<?php echo $menu_map['homepage']['url'];?>">主页</a></li>
                 <li class="<?php echo $menu_map['blog']['class'];?>"><a href="<?php echo $menu_map['blog']['url'];?>">博客</a></li>
