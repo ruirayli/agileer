@@ -73,7 +73,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="brand img-circle" href="<?php echo $menu_map['homepage']['url'];?>"><span style="margin-left:34px;">Agiler</span></a>
+          <a class="brand img-circle" href="<?php echo $menu_map['homepage']['url'];?>"><span style="margin-left:34px;">Agiler</span></a>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse" style="margin-left:99px;">
               <ul class="nav">

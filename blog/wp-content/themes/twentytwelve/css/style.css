@@ -246,3 +246,19 @@
       -moz-border-radius: 300px;
       border-radius: 300px;
     }
+
+    .entry-meta i.category_ico{
+      padding: 2px 0 2px 25px;
+      background: url(../img/category_ico.png) no-repeat left center;
+    }
+
+    .entry-meta i.time_ico{
+      padding: 2px 0 2px 25px;
+      background: url(../img/cal-ico.png) no-repeat left center;
+    }
+
+    .entry-meta i.tag_ico{
+      padding: 2px 0 2px 25px;
+      background: url(../img/tag-ico.png) no-repeat left center;
+    }
+
