@@ -9,8 +9,17 @@
  * @since Twenty Twelve 1.0
  */
 ?>
+	<?php
+		if(is_home()){
+			$meta_width = '248px';
+			$article_width = '389px';
+		}else{
+			$meta_width = '163px';
+			$article_width = '815px';
+		}
+	?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="overflow:hidden;">
-		<div style="width:35%;float:left;">
+		<div style="width:<?php echo $meta_width;?>;float:left;">
 			<footer class="entry-meta">
 				<?php twentytwelve_entry_meta(); ?>
 				<?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<br/><span class="edit-link">', '</span>' ); ?>
@@ -37,7 +46,7 @@
 			</footer><!-- .entry-meta -->
 		</div>
 
-		<div style="width:55%;float:left;">
+		<div style="width:<?php echo $article_width;?>;float:left;">
 			<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 			<div class="featured-post">
 				<?php _e( 'Featured post', 'twentytwelve' ); ?>
