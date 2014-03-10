@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="html5,本地存储" />
+<meta name="description" content="李瑞演示" />
+<title>幸运大转盘</title>
+<link rel="stylesheet" type="text/css" href="main.css" />
+<style type="text/css">
+.demo{width:417px; height:417px; position:relative; margin:50px auto}
+#disk{width:417px; height:417px; background:url(disk.jpg) no-repeat}
+#start{width:163px; height:320px; position:absolute; top:46px; left:130px;}
+#start img{cursor:pointer}
+</style>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jQueryRotate.2.2.js"></script>
+<script type="text/javascript" src="jquery.easing.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#startbtn").rotate({
+		bind:{
+			click:function(){
+				var a = Math.floor(Math.random() * 360);
+				 $(this).rotate({
+					 	duration:3000,
+					 	angle: 0, 
+            			animateTo:1440+a,
+						easing: $.easing.easeOutSine,
+						callback: function(){
+							alert('李瑞恭喜你：中奖了！');
+						}
+				 });
+			}
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="header">
+   <div id="logo"><h1><a href="http://www.agileer.com" title="返回李瑞博客首页">李瑞博客首页</a></h1></div>
+</div>
+
+<div id="main">
+   <div class="msg"></div>
+   <div class="demo">
+        <div id="disk"></div>
+        <div id="start"><img src="start.png" id="startbtn"></div>
+   </div>
+</div>
+
+
+<div id="footer">
+    <p>Powered by agileer 请注明出处：<a href="http://www.helloweba.com">www.agileer.com</a></p>
+</div>
+</body>
+</html>
