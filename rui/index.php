@@ -13,7 +13,7 @@
 </head>
 
 <body class="activity-lottery-winning">
-<div class="main">
+<div class="main2">
 <script type="text/javascript">
 	// var loadingObj = new loading(document.getElementById('loading'),{radius:20,circleLineWidth:8});   
  //    loadingObj.show();   
@@ -196,7 +196,7 @@ $(function() {
                 running = false;
                 count++
             },
-            timeout: 4000
+            timeout: 2000
         })
     })
 });
