@@ -1,0 +1,16 @@
+.agileer-info {
+	margin-top: -2px;
+	/*display: inline-block;*/
+	vertical-align: middle;
+	margin-left: 30px;
+	font: 12px/1.231 "Helvetica Neue",Helvetica Neue,Helvetica,Arial,Lantinghei SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+	color: #363b42;
+}
+
+.agileer-title{
+	display: inline-block;
+}
+
+.agileer-info span {
+	margin-right: 12px;
+}

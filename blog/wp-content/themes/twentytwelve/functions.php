@@ -376,6 +376,8 @@ function twentytwelve_entry_meta() {
 	// Translators: used between list items, there is a space after the comma.
 	$categories_list = get_the_category_list( __( ', ', 'twentytwelve' ) );
 
+	// var_dump($categories_list);
+
 	// Translators: used between list items, there is a space after the comma.
 	$tag_list = get_the_tag_list( '', __( ', ', 'twentytwelve' ) );
 
@@ -414,6 +416,14 @@ function twentytwelve_entry_meta() {
 	);
 }
 endif;
+
+function agileer_category_info() {
+	return  get_the_category_list( __( ', ', 'twentytwelve' ) );
+}
+
+function agileer_tag_info(){
+	return get_the_tag_list( '', __( ', ', 'twentytwelve' ) );
+}
 
 /**
  * Extend the default WordPress body classes.

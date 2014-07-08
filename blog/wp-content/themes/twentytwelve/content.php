@@ -9,17 +9,9 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-	<?php
-		if(is_home()){
-			$meta_width = '248px';
-			$article_width = '389px';
-		}else{
-			$meta_width = '163px';
-			$article_width = '815px';
-		}
-	?>
+
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="overflow:hidden;">
-		<div style="width:<?php echo $meta_width;?>;float:left;">
+		<div style="float:left;display:none;">
 			<footer class="entry-meta">
 				<?php twentytwelve_entry_meta(); ?>
 				<?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<br/><span class="edit-link">', '</span>' ); ?>
@@ -46,7 +38,7 @@
 			</footer><!-- .entry-meta -->
 		</div>
 
-		<div style="width:<?php echo $article_width;?>;float:left;">
+		<div style="float:left;">
 			<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 			<div class="featured-post">
 				<?php _e( 'Featured post', 'twentytwelve' ); ?>
@@ -55,12 +47,34 @@
 			<header class="entry-header">
 				<?php the_post_thumbnail(); ?>
 				<?php if ( is_single() ) : ?>
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<h1 class="entry-title agileer-title"><?php the_title(); ?></h1>
 				<?php else : ?>
-				<h1 class="entry-title">
+				<h1 class="entry-title agileer-title">
 					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 				</h1>
 				<?php endif; // is_single() ?>
+
+
+				<span class="agileer-info">
+					<?php 
+						$category_info = agileer_category_info();
+						$tag_info = agileer_tag_info();
+					?>
+					<?php if(!empty($category_info)):?>
+						<span>
+							分类：<span><?php echo $category_info; ?></span>
+						</span>
+					<?php endif;?>
+					<?php if(!empty($tag_info)):?>
+						<span>
+		        			标签：<span><?php echo $tag_info; ?></span> 
+						</span>		
+					<?php endif;?>	
+				</span>
+
+
+
+
 				<?php if ( comments_open() ) : ?>
 					<div class="comments-link">
 						<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'twentytwelve' ) . '</span>', __( '1 Reply', 'twentytwelve' ), __( '% Replies', 'twentytwelve' ) ); ?>

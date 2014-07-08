@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/bootstrap-responsive.min.css">
 <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/style.css">
+<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/agileer.css">
 
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 <!--[if lt IE 9]>
