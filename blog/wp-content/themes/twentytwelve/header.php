@@ -41,7 +41,7 @@
 <?php
   $menu_map = array('homepage' => array('url' => BASE_PATH, 'class' => set_menu_active("homepage")),
                     'blog' => array('url' => BASE_PATH . "blog/", 'class' => set_menu_active("blog")),
-                    'contact' => array('url' => $contact_url, 'class' => set_menu_active("contact")));
+                    'contact' => array('url' => BASE_PATH . "blog/contact/", 'class' => set_menu_active("contact")));
 
   function set_menu_active($type = "blog"){      
     $this_page = $_SERVER["REQUEST_URI"];
