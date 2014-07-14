@@ -39,21 +39,34 @@
 </head>
 
 <?php
-  if(ISDEV){
-    $contact_url = BASE_PATH . "blog/%E8%81%94%E7%B3%BB%E6%88%91/";
-  }else{
-    $contact_url = BASE_PATH . "blog/contact/";
-  }
-  $menu_map = array('homepage' => array('url' => BASE_PATH, 'class' => set_menu_active(BASE_PATH)),
-                    'blog' => array('url' => BASE_PATH . "blog/", 'class' => set_menu_active(BASE_PATH . "blog/")),
-                    'contact' => array('url' => $contact_url, 'class' => set_menu_active($contact_url)));
+  $menu_map = array('homepage' => array('url' => BASE_PATH, 'class' => set_menu_active("homepage")),
+                    'blog' => array('url' => BASE_PATH . "blog/", 'class' => set_menu_active("blog")),
+                    'contact' => array('url' => $contact_url, 'class' => set_menu_active("contact")));
 
-  function set_menu_active($url){
-    if($url == current_URL()){
-      return "active";
-    }else{
-      return "";
+  function set_menu_active($type = "blog"){    
+    $this_page = $_SERVER["REQUEST_URI"];
+    if (strpos($this_page, "?") !== false){
+       $this_page = reset(explode("?", $this_page));
+    } 
+    $active = false;
+    switch ($type) {
+      case 'homepage':
+        if($this_page == '/'){
+          $active = true;
+        }
+        break;  
+      case 'blog':
+        if(strpos($this_page, "/blog/") !== false){
+          $active = true;
+        }
+        break;     
+      default:
+        if(strpos($this_page, "/blog/contact") !== false){
+          $active = true;
+        }
+        break;
     }
+    return  $active ? "active" : "";  
   }
   
 ?>
