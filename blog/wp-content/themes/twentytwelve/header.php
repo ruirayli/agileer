@@ -43,7 +43,7 @@
                     'blog' => array('url' => BASE_PATH . "blog/", 'class' => set_menu_active("blog")),
                     'contact' => array('url' => $contact_url, 'class' => set_menu_active("contact")));
 
-  function set_menu_active($type = "blog"){    
+  function set_menu_active($type = "blog"){      
     $this_page = $_SERVER["REQUEST_URI"];
     if (strpos($this_page, "?") !== false){
        $this_page = reset(explode("?", $this_page));
