@@ -56,11 +56,11 @@
         }
         break;  
       case 'blog':
-        if(strpos($this_page, "/blog/") !== false){
+        if(strpos($this_page, "/blog/") !== false && strpos($this_page, "/blog/contact") === false){
           $active = true;
         }
         break;     
-      default:
+      case 'contact':
         if(strpos($this_page, "/blog/contact") !== false){
           $active = true;
         }
