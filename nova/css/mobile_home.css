@@ -94,7 +94,7 @@
 	 */		
 
 	/* HEADER */
-	#header { height: 40px; background: #3F67AB;padding-top:1px;}
+	#header { height: 40px; background: #3F67AB;padding-top:1px;width:1500px;}
 	#logo { display: block;width: 112px;height: 31px;text-indent: -99em;margin-left: 6px;margin-top: 5px;}
 	/* FOOTER */
 	#footer { padding: 100px 0 30px;   }
