@@ -32,46 +32,63 @@
 </head>
 
 <script>
-    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-    window.shareData = {
-        "timeLineLink": "www.agileer.com",   
-        "sendFriendLink": "www.agileer.com",
-        "weiboLink": "www.agileer.com",
-        "tTitle": "嘉运达 移动电源",
-        "tContent": "伴随你移动，续航你精彩！",
-        "fTitle": "嘉运达 移动电源",
-        "fContent": "伴随你移动，续航你精彩！",
-        "wContent": "伴随你移动，续航你精彩！"
-        };
-        // 发送给好友
-        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
-            WeixinJSBridge.invoke('sendAppMessage', {
-                "appid": appid,
-                "img_url": "/images/mobile/chongdianbao.jpg",
-                "img_width": "401",
-                "img_height": "275",
-                "link": window.shareData.sendFriendLink,
-                "desc": window.shareData.fContent,
-                "title": window.shareData.fTitle
-            }, function (res) {
-                _report('send_msg', res.err_msg);
-            })
-        });
-        // 分享到朋友圈
-        WeixinJSBridge.on('menu:share:timeline', function (argv) {
-            WeixinJSBridge.invoke('shareTimeline', {
-                "img_url": "/images/mobile/chongdianbao.jpg",
-                "img_width": "401",
-                "img_height": "275",
-                "link": window.shareData.timeLineLink,
-                "desc": window.shareData.tContent,
-                "title": window.shareData.tTitle
-            }, function (res) {
-                _report('timeline', res.err_msg);
-            });
-        });
- 
-    }, false)
+	wx.ready(function () {
+		  // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
+		  document.querySelector('#checkJsApi').onclick = function () {
+		    wx.checkJsApi({
+		      jsApiList: [
+		        'getNetworkType',
+		        'previewImage'
+		      ],
+		      success: function (res) {
+		        alert(JSON.stringify(res));
+		      }
+		    });
+		  };
+
+		  document.querySelector('#onMenuShareAppMessage').onclick = function () {
+		    wx.onMenuShareAppMessage({
+		      title: '互联网之子 方倍工作室',
+		      desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',
+		      link: 'http://www.agileer.com',
+		      imgUrl: '/images/mobile/chongdianbao.jpg',
+		      trigger: function (res) {
+		        alert('用户点击发送给朋友');
+		      },
+		      success: function (res) {
+		        alert('已分享');
+		      },
+		      cancel: function (res) {
+		        alert('已取消');
+		      },
+		      fail: function (res) {
+		        alert(JSON.stringify(res));
+		      }
+		    });
+		    alert('已注册获取“发送给朋友”状态事件');
+		  };
+
+		  document.querySelector('#onMenuShareTimeline').onclick = function () {
+		    wx.onMenuShareTimeline({
+		      title: '互联网之子 方倍工作室',
+		      link: 'http://www.agileer.com',
+		      imgUrl: '/images/mobile/chongdianbao.jpg',
+		      trigger: function (res) {
+		        alert('用户点击分享到朋友圈');
+		      },
+		      success: function (res) {
+		        alert('已分享');
+		      },
+		      cancel: function (res) {
+		        alert('已取消');
+		      },
+		      fail: function (res) {
+		        alert(JSON.stringify(res));
+		      }
+		    });
+		    alert('已注册获取“分享到朋友圈”状态事件');
+		  };
+	});
 </script>
 
 <body>
