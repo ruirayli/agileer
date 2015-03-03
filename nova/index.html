@@ -4,11 +4,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>嘉运达 充电宝</title>
-<link rel="stylesheet" type="text/css" href="/css/mobile_home.css?r=20130530.css" /><style>
-	#hd,.topnav-left, .topnav-right {display: none;}
-	a:focus {outline:0;}
-	#logo {background: url('/images/mobile/jiayunda.png');}
-</style>
+	<link rel="stylesheet" type="text/css" href="/css/mobile_home.css?r=20130530.css" />
+	<style>
+		#hd,.topnav-left, .topnav-right {display: none;}
+		a:focus {outline:0;}
+		#logo {background: url('/images/mobile/jiayunda.png');}
+	</style>
 	<script>
 
 		var b,
@@ -29,6 +30,49 @@
 		(function(){if(!/*@cc_on!@*/0)return;var e = "abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','),i=e.length;while(i--){document.createElement(e[i])}})()
 	</script>
 </head>
+
+<script>
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    window.shareData = {
+        "timeLineLink": "www.agileer.com",   
+        "sendFriendLink": "www.agileer.com",
+        "weiboLink": "www.agileer.com",
+        "tTitle": "嘉运达 移动电源",
+        "tContent": "伴随你移动，续航你精彩！",
+        "fTitle": "嘉运达 移动电源",
+        "fContent": "伴随你移动，续航你精彩！",
+        "wContent": "伴随你移动，续航你精彩！"
+        };
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                "img_url": "img/logo_white.png",
+                "img_width": "401",
+                "img_height": "275",
+                "link": window.shareData.sendFriendLink,
+                "desc": window.shareData.fContent,
+                "title": window.shareData.fTitle
+            }, function (res) {
+                _report('send_msg', res.err_msg);
+            })
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url": "img/logo_white.png",
+                "img_width": "401",
+                "img_height": "275",
+                "link": window.shareData.timeLineLink,
+                "desc": window.shareData.tContent,
+                "title": window.shareData.tTitle
+            }, function (res) {
+                _report('timeline', res.err_msg);
+            });
+        });
+ 
+    }, false)
+</script>
+
 <body>
 	<header id="header">
 	<a href="http://tapd.oa.com/" id="logo">Tapd</a>
